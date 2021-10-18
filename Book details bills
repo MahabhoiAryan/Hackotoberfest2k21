@@ -1,0 +1,49 @@
+#include<stdio.h>
+#include<string.h>
+#define SIZE 20
+ struct bookdetail
+  {
+    char name[20];
+    char author[20];
+    int pages;
+    float price;
+   };
+  void output(struct bookdetail X[],int n);
+  void main()
+ {
+    struct bookdetail C[SIZE];
+    int num,i;
+    printf(" \n Enter the Numbers of Books :- ");
+    scanf("%d",&num);
+    for(i=0;i<num;i++)
+   {
+    printf(" \n Book %d Detail \n ",i+1);
+ 
+    printf(" \n Enter the Book Name:-");
+    scanf("%s",C[i].name);
+    
+    printf(" \n Enter the Author of Book:-");
+    scanf("%s",C[i].author);
+ 
+    printf(" \n Enter the Pages of Book:-");
+    scanf("%d",&C[i].pages);
+ 
+    printf(" \n Enter the Price of Book:-");
+    scanf("%f",&C[i].price);
+    }
+    output(C,num);
+ }
+   void output(struct bookdetail X[],int n)
+ {
+    int i,t=1;
+    for(i=0;i<n;i++,t++)
+   {
+    printf("\n");
+    printf(" Book No. %d\n",t);
+    printf("\t Book %d Name is   = %s \n",t,X[i].name);
+    printf("\t Book %d Author is = %s \n",t,X[i].author);
+    printf("\t Book %d Pages is  = %d \n",t,X[i].pages);
+    printf("\t Book %d Price is  = %0.2f \n",t,X[i].price);
+    printf(" \n ");
+   }
+ }
